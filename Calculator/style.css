@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --success-color: #00b894;
+    --danger-color: #d63031;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffbf40, #903d3d);
+    padding: 20px;
+}
+
+#calculator {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    border: none;
+    height: 60px;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: rgb(243, 134, 0);
+    color: var(--dark-color);
+    font-weight: 500;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2),
+             inset 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.operator {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.equals-btn {
+    background-color: var(--success-color);
+    color: white;
+    grid-row: span 2;
+}
+
+.clear-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+.delete-btn {
+    background-color: #ff7675;
+    color: white;
+    grid-column: span 2;
+    font-weight: bold;
+}
+
+.zero-btn {
+    grid-column: span 1;
+}
+
+.double-zero-btn {
+    background-color: #ffffff;
+    color: var(--dark-color);
+}
+
+@media (max-width: 400px) {
+    #calculator {
+        padding: 15px;
+    }
+    
+    button {
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    #display {
+        height: 60px;
+        font-size: 1.75rem;
+    }
+}
