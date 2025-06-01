@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">MyLogo</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="resume.pdf" class="btn btn-primary" download>Download Resume (PDF)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero/Intro Section -->
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <div class="glowbox"></div>
+                <h2>Hey, I'm <span class="highlight">Pramit Sil</span></h2>
+                <div class="heading">
+                    <h1><span class="highlight">Full Stack</span> Developer</h1>
+                </div>
+                <p>I'm a Full Stack developer. I help you build beautiful websites your users will love.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">Browse Projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+
+                <!-- 3D  -->
+
+                <model-viewer src="models/kuma_heavy_robot_r-9000s.glb" autoplay style="width: 600px; height: 600px; "
+                    alt="A 3D model of a robot" shadow-intensity="1">
+
+
+                </model-viewer>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="glowbox"></div>
+            <div class="about-image">
+                <img src="images/profile-placeholder.png" alt="Profile" />
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>Short bio goes here. Highlight your skills and experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+
+            <h2>Skills</h2>
+            <div class="skills-cards-container">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML
+                            
+                        </li>
+                        <li>CSS
+                           
+                        </li>
+                        <li>JavaScript
+                            
+                        </li>
+                        <li>Tailwind
+                            
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Nodejs</li>
+                        <li>Expressjs</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Database</h3>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>C/C++</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Designing</h3>
+                    <ul>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/project1-placeholder.png" alt="Project 1" />
+                    <h3>Project Title 1</h3>
+                    <p>Short description of the project goes here.</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2-placeholder.png" alt="Project 2" />
+                    <h3>Project Title 2</h3>
+                    <p>Short description of the project goes here.</p>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:pramit.0904@gmail.com">pramit.0904@gmail.com</a></p>
+            <p>Phone: <a href="tel:+917041887184">+91 7041887184</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2025 Pramit Sil. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/pramit-sil-31008227b/" target="blank">LinkedIn</a>
+                <a href="https://github.com/pramit091104" target="blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+
+    <script>
+        function setProgress(percent) {
+            const circle = document.querySelector('.progress-ring__circle');
+            const radius = circle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+          
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            const offset = circumference - (percent / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+          
+            document.getElementById("progress-value").textContent = `${percent}%`;
+          }
+          
+          // Example usage: Animate from 0 to 75%
+          let current = 0;
+          const target = 75;
+          
+          const interval = setInterval(() => {
+            if (current <= target) {
+              setProgress(current);
+              current++;
+            } else {
+              clearInterval(interval);
+            }
+          }, 20);
+          
+    </script>
+</body>
+
+</html>
