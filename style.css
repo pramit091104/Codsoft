@@ -337,6 +337,8 @@ nav a:focus {
   color: #fff;
 }
 
+
+.skills-section{
   /* background: #111111; */
   padding: 3rem 0 2rem 0;
   animation: appear 7s linear;
@@ -378,6 +380,7 @@ nav a:focus {
   background: linear-gradient(to right, #181818, #6d2fcf);
   color: #fff;
 }
+
 
 /* Projects Section */
 .projects-section {

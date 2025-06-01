@@ -84,10 +84,18 @@
                 <div class="skill-card">
                     <h3>Frontend</h3>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Tailwind</li>
+                        <li>HTML
+                            
+                        </li>
+                        <li>CSS
+                           
+                        </li>
+                        <li>JavaScript
+                            
+                        </li>
+                        <li>Tailwind
+                            
+                        </li>
                     </ul>
                 </div>
                 <div class="skill-card">
@@ -164,6 +172,34 @@
     </footer>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
+
+    <script>
+        function setProgress(percent) {
+            const circle = document.querySelector('.progress-ring__circle');
+            const radius = circle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+          
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            const offset = circumference - (percent / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+          
+            document.getElementById("progress-value").textContent = `${percent}%`;
+          }
+          
+          // Example usage: Animate from 0 to 75%
+          let current = 0;
+          const target = 75;
+          
+          const interval = setInterval(() => {
+            if (current <= target) {
+              setProgress(current);
+              current++;
+            } else {
+              clearInterval(interval);
+            }
+          }, 20);
+          
+    </script>
 </body>
 
 </html>
