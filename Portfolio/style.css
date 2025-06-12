@@ -483,7 +483,7 @@ nav a:focus {
   padding: 3rem 0 2rem 0;
   animation: appear 7s linear;
   animation-timeline: view();
-  animation-range: entry 0;
+  animation-range: 5% 50%;
 }
 
 .skills-section h2 {
@@ -613,7 +613,6 @@ nav a:focus {
 
 /* Contact Section */
 .contact-section {
-  /* background: #111111; */
   padding: 4rem 0 3rem 0;
   text-align: center;
   animation: appear linear;
@@ -621,10 +620,93 @@ nav a:focus {
   animation-range: entry 0;
 }
 
-
 .contact-section h2 {
   font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-content {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  animation: slideInLeft 1s ease-out;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  animation: slideInRight 1s ease-out;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-group {
   margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(14, 3, 3, 0.203);
+  border: 1px solid rgba(228, 95, 0, 0.2);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-family: "VT323", monospace;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(228, 95, 0, 0.2);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 .contact-section .email,
@@ -664,6 +746,17 @@ nav a:focus {
   text-decoration: none;
 }
 
+@media (max-width: 900px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+  }
+}
 
 /* Footer */
 footer {
