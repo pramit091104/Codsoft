@@ -1,9 +1,9 @@
-
-
+// function to display values
 function appendToDisplay(value) {
     document.getElementById("display").value += value;
 }
 
+// function to calculate results
 function calculateResult() {
     const display = document.getElementById("display");
     const expression = display.value;
@@ -59,10 +59,12 @@ function calculateResult() {
     }
 }
 
+// function to clear the display
 function clearDisplay() {
     document.getElementById("display").value = "";
 }
 
+// function to delete the last character
 function deleteLastChar() {
     const display = document.getElementById("display");
     display.value = display.value.slice(0, -1);
